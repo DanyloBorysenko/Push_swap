@@ -3,7 +3,22 @@ HEADER = push_swap.h
 CC = cc
 CFLAGS= -Wall -Wextra -Werror
 MY_SRC = push_swap.c \
-         validator.c
+		 validator.c \
+         parser.c
+LIBFT_DIR=libft
+LIBFT= libft.a
 
-$(NAME): $(MY_SRC) $(HEADER)
-	$(CC) $(CFLAGS) $(MY_SRC) -I. -o $(NAME)
+$(NAME): $(LIBFT) $(MY_SRC) $(HEADER)
+	$(CC) $(CFLAGS) $(MY_SRC) -g -I. -I$(LIBFT_DIR) -L$(LIBFT_DIR) -lft -o $(NAME)
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+all: $(NAME)
+
+clean:
+	make -C $(LIBFT_DIR) clean
+
+fclean: clean
+	make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
