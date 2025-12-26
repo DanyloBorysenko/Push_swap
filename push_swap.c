@@ -6,14 +6,14 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:33:36 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/22 19:56:18 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 15:26:03 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static void free_all(char **argv)
+static void	free_all(char **argv)
 {
 	int	i;
 
@@ -23,8 +23,37 @@ static void free_all(char **argv)
 		free(argv[i]);
 		i++;
 	}
+	free(argv);
 }
 
+void	update_argc_argv(int *argc, char ***argv, int *is_allocated)
+{
+	int	i;
+
+	i = 0;
+	if (*argc == 2)
+	{
+		*argv = ft_split((*argv)[1], ' ');
+		i = 0;
+		while ((*argv)[i])
+			i++;
+		*argc = i;
+		*is_allocated = 1;
+	}
+	else
+	{
+		*argc = *argc - 1;
+		*argv = *(argv) + 1;
+	}
+}
+
+void	hand_err(int is_allocated, char **argv)
+{
+	write(2, "Error\n", 6);
+	if (is_allocated == 1)
+		free_all(argv);
+	exit(EXIT_FAILURE);
+}
 
 int	main(int argc, char **argv)
 {
@@ -32,57 +61,21 @@ int	main(int argc, char **argv)
 	int	*numbers;
 	int	is_valide;
 	int	is_allocated;
+	t_stack *stack_a;
 
 	is_allocated = 0;
 	if (argc == 1)
 		exit(EXIT_SUCCESS);
-	if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		i = 0;
-		while (argv[i])
-			i++;
-		argc = i;
-		is_allocated = 1;
-	}
-	else
-	{
-		argc = argc - 1;
-		argv = argv + 1;
-	}
+	update_argc_argv(&argc, &argv, &is_allocated);
 	is_valide = validate(argc, argv);
 	if (is_valide == -1)
-	{
-		write(2, "Error\n", 6);
-		if (is_allocated == 1)
-		{
-			free_all(argv);
-			free(argv);
-		}
-		exit(EXIT_FAILURE);
-	}
+		hand_err(is_allocated, argv);
 	numbers = parse(argc, argv);
 	if (numbers == NULL)
-	{
-		if (is_allocated == 1)
-		{
-			free_all(argv);
-			free(argv);
-		}
-		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
+		hand_err(is_allocated, argv);
 	if (is_allocated == 1)
-	{
 		free_all(argv);
-		free(argv);
-	}
-	i = 0;
-	while (i < argc)
-	{
-		printf("%d, ", numbers[i]);
-		i++;
-	}
+	stack_a = create_stack(numbers, argc);
 	free(numbers);
-	numbers = NULL;
+	free(stack_a);
 }

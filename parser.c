@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 13:29:09 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/22 21:05:00 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 13:07:32 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static long	get_int(char *str)
 {
 	int		i;
 	long	res;
-	int	sign;
+	int		sign;
 
 	i = 0;
 	res = 0;
@@ -37,7 +37,7 @@ static long	get_int(char *str)
 	return (res);
 }
 
-int fill_arr(int count, char **argv, int *nums)
+int	fill_arr(int count, char **argv, int *nums)
 {
 	int		i;
 	long	integer;
@@ -77,7 +77,7 @@ static int	check_dup(int count, int *nums)
 int	*parse(int count, char **argv)
 {
 	int	*nums;
-	int is_arr_full;
+	int	is_arr_full;
 
 	nums = malloc(sizeof(int) * count);
 	if (!nums)
