@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:33:36 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 15:26:03 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:05:04 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	hand_err(int is_allocated, char **argv)
 
 int	main(int argc, char **argv)
 {
-	int	i;
 	int	*numbers;
 	int	is_valide;
 	int	is_allocated;

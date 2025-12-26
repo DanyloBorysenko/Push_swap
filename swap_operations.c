@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_operations_1.c                               :+:      :+:    :+:   */
+/*   swap_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:06:18 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 16:18:13 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:01:44 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	swap(t_stack *stack)
+{
+	int	temp;
+
+	if (stack->size >= 2)
+	{
+		temp = stack->arr[0];
+		stack->arr[0] = stack->arr[1];
+		stack->arr[1] = temp;
+	}
+}
 
 void	sa(t_stack *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 14:32:19 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 15:12:16 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:05:28 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,3 @@ void	shift_down(t_stack *stack)
 		}
 	}
 }
-

@@ -5,7 +5,6 @@ CFLAGS= -Wall -Wextra -Werror
 MY_SRC = push_swap.c \
 		 validator.c \
          parser.c    \
-		 basic_operations.c \
 		 stack_utils.c \
 		 swap_operations.c \
 		 push_operations.c \

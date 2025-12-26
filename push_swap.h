@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:53:51 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 15:15:50 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:02:36 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,19 @@ typedef struct s_stack
 
 int	*parse(int count, char **argv);
 int	validate(int count, char **argv);
+void	pa(t_stack *stack_b, t_stack *stack_a);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
 void	shift_up(t_stack *stack);
 void	shift_down(t_stack *stack);
-void	swap(t_stack *stack);
-void	push(t_stack *stack_a, t_stack *stack_b);
-void	rotate(t_stack *stack);
-void	r_rotate(t_stack *stack);
 t_stack	*create_stack(int *ints, int size);
-
 
 #endif

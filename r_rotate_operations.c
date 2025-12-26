@@ -6,11 +6,23 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:35:48 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 16:37:32 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:02:58 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	r_rotate(t_stack *stack)
+{
+	int	temp;
+
+	if (stack->size > 1)
+	{
+		temp = stack->arr[stack->size - 1];
+		shift_down(stack);
+		stack->arr[0] = temp;
+	}
+}
 
 void	rra(t_stack *stack)
 {
