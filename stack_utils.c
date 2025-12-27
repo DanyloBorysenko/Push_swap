@@ -6,23 +6,26 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 14:32:19 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 17:05:28 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/27 17:50:06 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *create_stack(int *ints, int size)
+t_stack *create_stack(int nums_count)
 {
 	t_stack *stack;
 	
-	if (!ints)
-		return (NULL);
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->arr = ints;
-	stack->size = size;
+	stack->arr = calloc(sizeof(int), nums_count);
+	if (!stack->arr)
+	{
+		free(stack);
+		return (NULL);
+	}
+	stack->size = 0;
 	return (stack);
 }
 
@@ -47,7 +50,7 @@ void	shift_down(t_stack *stack)
 
 	if (stack->size > 1)
 	{
-		i = stack->size - 1;
+		i = stack->size;
 		while (i >= 1)
 		{
 			stack->arr[i] = stack->arr[i - 1];

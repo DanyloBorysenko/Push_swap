@@ -2,12 +2,16 @@ NAME = push_swap
 HEADER = push_swap.h
 CC = cc
 CFLAGS= -Wall -Wextra -Werror
-MY_SRC = push_swap.c \
+MY_SRC = main.c \
 		 validator.c \
          parser.c    \
 		 stack_utils.c \
 		 swap_operations.c \
 		 push_operations.c \
+		 rotate_operations.c\
+		 r_rotate_operations.c\
+		 push_swap.c       \
+		 algorithm.c
 
 LIBFT_DIR=libft
 LIBFT= libft.a
