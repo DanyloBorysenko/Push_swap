@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:33:36 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/27 13:49:35 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 12:49:17 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	update_argc_argv(int *argc, char ***argv, int *is_allocated)
 
 void	hand_err(int is_allocated, char **argv)
 {
-	write(2, "Error\n", 6);
+	ft_printf("Error\n");
 	if (is_allocated == 1)
 		free_all(argv);
 	exit(EXIT_FAILURE);

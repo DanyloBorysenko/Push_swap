@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:06:18 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/27 17:29:42 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 12:51:29 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,18 @@ static void	swap(t_stack *stack)
 void	sa(t_stack *stack)
 {
 	swap(stack);
-	write(1, "sa\n", 3);
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack *stack)
 {
 	swap(stack);
-	write(1, "sb\n", 3);
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	write(1, "ss\n", 3);
+	ft_printf("ss\n");
 }
-

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:35:48 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 17:02:58 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 12:52:35 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ static void	r_rotate(t_stack *stack)
 void	rra(t_stack *stack)
 {
 	r_rotate(stack);
-	write(1, "rra\n", 4);
+	ft_printf("rra\n");
 }
 
 void	rrb(t_stack *stack)
 {
 	r_rotate(stack);
-	write(1, "rrb\n", 4);
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	r_rotate(stack_a);
 	r_rotate(stack_b);
-	write(1, "rrr\n", 4);
+	ft_printf("rrr\n");
 }

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:19:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/26 17:00:23 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 12:53:01 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static void	push(t_stack *stack_from, t_stack *stack_to)
 void	pa(t_stack *stack_b, t_stack *stack_a)
 {
 	push(stack_b, stack_a);
-	write(1, "pa\n", 3);	
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
 	push(stack_a, stack_b);
-	write(1, "pb\n", 3);	
+	ft_printf("pb\n");	
 }
 

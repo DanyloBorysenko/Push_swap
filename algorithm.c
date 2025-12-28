@@ -6,22 +6,49 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/27 17:51:35 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 11:51:16 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_stack(t_stack *a)
+static void rotate_to_top(t_stack *stack, int min, int ind_min)
+{
+	int midl_ind;
+	
+	midl_ind = stack->size / 2;
+	if (ind_min < midl_ind)
+	{
+		while (stack->arr[0] != min)
+			ra(stack);
+	}
+	else
+	{
+		while (stack->arr[0] != min)
+			rra(stack);	
+	}
+}
+
+static void move_min(t_stack *stack)
 {
 	int	i;
+	int	min;
+	int	ind_min;
+
+	i = 1;
 	
-	i = 0;
-	while (i < a->size)
+	min = stack->arr[0];
+	ind_min = 0;
+	while (i < stack->size)
 	{
-		printf("%d, ", a->arr[i]);
+		if (stack->arr[i] < min)
+		{
+			min = stack->arr[i];
+			ind_min = i;	
+		}
 		i++;
-	}	
+	}
+	rotate_to_top(stack, min, ind_min);
 }
 
 static void sort_3(t_stack *a)
@@ -44,38 +71,24 @@ static void sort_3(t_stack *a)
 	}
 	if (max == a->arr[0])
 		ra(a);
-	else
+	else if (max == a->arr[1])
 		rra(a);
 	if (a->arr[0] > a->arr[1])
 		sa(a);
 }
 
-static void	sort_4(t_stack *a, t_stack *b)
-{
-	pb(a, b);
-	sort_3(a);
-	pa(b, a);
-	if (a->arr[0] > a->arr[3])
-		ra(a);
-	else if (a->arr[0] > a->arr[1])
-		sa(a);
-}
-
 static void sort_5(t_stack *a, t_stack *b)
 {
-	int i;
-	
-	i = 0;
-	pb(a, b);
-	sort_4(a, b);
-	pa(b, a);
-	if (a->arr[0] > a->arr[4])
-		ra(a);
-	while (a->arr[i] < a->arr[i + 1])
+	while (a->size != 3)
 	{
-		sa(a);
-		i++;
+		move_min(a);
+		pb(a, b);
 	}
+	sort_3(a);
+	while (b->size != 0)
+		pa(b, a);
+	print_stack(a);
+	print_stack(b);
 }
 
 void run_algorithm(t_stack *a, t_stack *b)
@@ -84,12 +97,8 @@ void run_algorithm(t_stack *a, t_stack *b)
 		return ;
 	else if (a->size <= 3)
 		sort_3(a);
-	else if (a->size == 4)
-		sort_4(a, b);
-	else if (a->size == 5)
+	else if (a->size <= 5)
 		sort_5(a, b);
 	// else
 	// 	chunck_sort(a, b);
-	b->size++;
 }
-

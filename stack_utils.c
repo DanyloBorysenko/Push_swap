@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 14:32:19 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/27 17:50:06 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 12:45:06 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	shift_down(t_stack *stack)
 {
 	int	i;
 
-	if (stack->size > 1)
+	if (stack->size > 0)
 	{
 		i = stack->size;
 		while (i >= 1)
@@ -57,4 +57,17 @@ void	shift_down(t_stack *stack)
 			i--;
 		}
 	}
+}
+
+void print_stack(t_stack *a)
+{
+	int	i;
+	
+	i = 0;
+	while (i < a->size)
+	{
+		ft_printf("%d, ", a->arr[i]);
+		i++;
+	}
+	ft_printf("\n");
 }
