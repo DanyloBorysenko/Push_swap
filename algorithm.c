@@ -6,16 +6,16 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/28 11:51:16 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 17:56:50 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rotate_to_top(t_stack *stack, int min, int ind_min)
+static void	rotate_to_top(t_stack *stack, int min, int ind_min)
 {
-	int midl_ind;
-	
+	int	midl_ind;
+
 	midl_ind = stack->size / 2;
 	if (ind_min < midl_ind)
 	{
@@ -25,18 +25,19 @@ static void rotate_to_top(t_stack *stack, int min, int ind_min)
 	else
 	{
 		while (stack->arr[0] != min)
-			rra(stack);	
+		{
+			rra(stack);
+		}	
 	}
 }
 
-static void move_min(t_stack *stack)
+static void	move_min(t_stack *stack)
 {
 	int	i;
 	int	min;
 	int	ind_min;
 
 	i = 1;
-	
 	min = stack->arr[0];
 	ind_min = 0;
 	while (i < stack->size)
@@ -44,23 +45,23 @@ static void move_min(t_stack *stack)
 		if (stack->arr[i] < min)
 		{
 			min = stack->arr[i];
-			ind_min = i;	
+			ind_min = i;
 		}
 		i++;
 	}
 	rotate_to_top(stack, min, ind_min);
 }
 
-static void sort_3(t_stack *a)
+static void	sort_3(t_stack *a)
 {
-	int max;
+	int	max;
 	int	i;
 	
 	if (a->size == 2 && a->arr[0] > a->arr[1])
 	{
 		sa(a);
 		return ;
-	}	
+	}
 	max = a->arr[0];
 	i = 1;
 	while (i < a->size)
@@ -87,8 +88,6 @@ static void sort_5(t_stack *a, t_stack *b)
 	sort_3(a);
 	while (b->size != 0)
 		pa(b, a);
-	print_stack(a);
-	print_stack(b);
 }
 
 void run_algorithm(t_stack *a, t_stack *b)
@@ -99,6 +98,6 @@ void run_algorithm(t_stack *a, t_stack *b)
 		sort_3(a);
 	else if (a->size <= 5)
 		sort_5(a, b);
-	// else
-	// 	chunck_sort(a, b);
+	else
+		sort_5(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:19:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/28 12:53:01 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 17:54:55 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	push(stack_a, stack_b);
 	ft_printf("pb\n");	
 }
-

@@ -6,16 +6,16 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 14:32:19 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/28 12:45:06 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/28 17:48:24 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *create_stack(int nums_count)
+t_stack	*create_stack(int nums_count)
 {
-	t_stack *stack;
-	
+	t_stack	*stack;
+
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
@@ -59,10 +59,10 @@ void	shift_down(t_stack *stack)
 	}
 }
 
-void print_stack(t_stack *a)
+void	print_stack(t_stack *a)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < a->size)
 	{
