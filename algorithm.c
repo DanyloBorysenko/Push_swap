@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/28 17:56:50 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/29 20:18:09 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	rotate_to_top(t_stack *stack, int min, int ind_min)
 		while (stack->arr[0] != min)
 		{
 			rra(stack);
-		}	
+		}
 	}
 }
 
@@ -56,7 +56,7 @@ static void	sort_3(t_stack *a)
 {
 	int	max;
 	int	i;
-	
+
 	if (a->size == 2 && a->arr[0] > a->arr[1])
 	{
 		sa(a);
@@ -78,7 +78,7 @@ static void	sort_3(t_stack *a)
 		sa(a);
 }
 
-static void sort_5(t_stack *a, t_stack *b)
+static void	sort_5(t_stack *a, t_stack *b)
 {
 	while (a->size != 3)
 	{
@@ -90,7 +90,7 @@ static void sort_5(t_stack *a, t_stack *b)
 		pa(b, a);
 }
 
-void run_algorithm(t_stack *a, t_stack *b)
+void	run_algorithm(t_stack *a, t_stack *b)
 {
 	if (a->size <= 1)
 		return ;
@@ -99,5 +99,5 @@ void run_algorithm(t_stack *a, t_stack *b)
 	else if (a->size <= 5)
 		sort_5(a, b);
 	else
-		sort_5(a, b);
+		redix(a, b);
 }

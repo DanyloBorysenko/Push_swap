@@ -11,7 +11,8 @@ MY_SRC = main.c \
 		 rotate_operations.c\
 		 r_rotate_operations.c\
 		 push_swap.c       \
-		 algorithm.c
+		 algorithm.c \
+		 redix.c
 
 LIBFT_DIR=libft
 LIBFT= libft.a

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:53:51 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/28 17:54:33 by danborys         ###   ########.fr       */
+/*   Updated: 2025/12/29 20:47:39 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ t_stack	*create_stack(int nums_count);
 void	print_stack(t_stack *a);
 void	push_swap(int count, int *nums);
 void	run_algorithm(t_stack *a, t_stack *b);
+
+void	redix(t_stack *a, t_stack *b);
 
 #endif
