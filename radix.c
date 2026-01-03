@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redix.c                                            :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 18:04:04 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/29 20:46:47 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/03 13:41:04 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	get_max_bits(t_stack *stack)
 	return (bits_count);
 }
 
-void	redix(t_stack *a, t_stack *b)
+void	radix(t_stack *a, t_stack *b)
 {
 	int	max_bits;
 	int	size;

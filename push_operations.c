@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:19:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/29 16:50:26 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:20:09 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static void	push(t_stack *stack_from, t_stack *stack_to)
 {
 	if (stack_from->size > 0)
 	{
+		stack_to->size++;
 		shift_down(stack_to);
 		stack_to->arr[0] = stack_from->arr[0];
-		stack_to->size++;
 		shift_up(stack_from);
 		stack_from->size--;
 	}

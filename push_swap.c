@@ -6,18 +6,24 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:46:42 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/29 20:47:20 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:11:19 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_stack(t_stack *stack)
+static int	is_arr_sortd(int count, int *nums)
 {
-	if (!stack)
-		return ;
-	free(stack->arr);
-	free(stack);
+	int	i;
+
+	i = 0;
+	while (i < count - 1)
+	{
+		if (nums[i] > nums[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	*intdup(int count, int *nums)
@@ -89,6 +95,8 @@ void	push_swap(int count, int *nums)
 	t_stack	*b;
 	int		i;
 
+	if (is_arr_sortd(count, nums) == 1)
+		exit(EXIT_SUCCESS);
 	make_indexed_arr(count, nums);
 	a = create_stack(count);
 	i = 0;
@@ -99,9 +107,9 @@ void	push_swap(int count, int *nums)
 	}
 	a->size = count;
 	b = create_stack(count);
+	print_stack(a);
 	run_algorithm(a, b);
 	print_stack(a);
-	print_stack(b);
 	free_stack(a);
 	free_stack(b);
 }

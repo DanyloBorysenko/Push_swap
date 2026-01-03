@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2025/12/29 20:18:09 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/03 14:01:08 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ void	run_algorithm(t_stack *a, t_stack *b)
 	else if (a->size <= 5)
 		sort_5(a, b);
 	else
-		redix(a, b);
+		sort_5(a, b);
 }
