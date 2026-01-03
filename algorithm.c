@@ -6,27 +6,34 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/03 14:01:08 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/03 20:55:18 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_to_top(t_stack *stack, int min, int ind_min)
+static void	rotate_a_to_top(t_stack *stack, int el_ind)
 {
 	int	midl_ind;
+	int	rot_count;
 
 	midl_ind = stack->size / 2;
-	if (ind_min < midl_ind)
+	if (el_ind < midl_ind)
 	{
-		while (stack->arr[0] != min)
+		rot_count = el_ind;
+		while (rot_count > 0)
+		{
 			ra(stack);
+			rot_count--;
+		}
 	}
 	else
 	{
-		while (stack->arr[0] != min)
+		rot_count = stack->size - el_ind;
+		while (rot_count > 0)
 		{
 			rra(stack);
+			rot_count--;
 		}
 	}
 }
@@ -49,7 +56,7 @@ static void	move_min(t_stack *stack)
 		}
 		i++;
 	}
-	rotate_to_top(stack, min, ind_min);
+	rotate_a_to_top(stack, ind_min);
 }
 
 static void	sort_3(t_stack *a)
@@ -99,5 +106,5 @@ void	run_algorithm(t_stack *a, t_stack *b)
 	else if (a->size <= 5)
 		sort_5(a, b);
 	else
-		sort_5(a, b);
+		chunk_sort(a, b);
 }
