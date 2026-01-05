@@ -12,6 +12,7 @@ MY_SRC = main.c \
 		 r_rotate_operations.c\
 		 push_swap.c       \
 		 algorithm.c \
+		 algorithm_utils.c \
 		 chunk.c
 
 LIBFT_DIR=libft

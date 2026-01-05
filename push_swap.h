@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 18:53:51 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/03 20:54:57 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/05 20:23:19 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ void	free_stack(t_stack *stack);
 
 void	push_swap(int count, int *nums);
 void	run_algorithm(t_stack *a, t_stack *b);
+
+int		find_ind_max(t_stack *stack);
+int		find_ind_prev_max(t_stack *stack, int max_ind);
+int		moves_ned(t_stack *stack, int el_ind);
 
 void	chunk_sort(t_stack *a, t_stack *b);
 

@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/03 20:55:18 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/05 19:39:45 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,17 @@ static void	move_min(t_stack *stack)
 
 static void	sort_3(t_stack *a)
 {
-	int	max;
-	int	i;
+	int	max_ind;
 
 	if (a->size == 2 && a->arr[0] > a->arr[1])
 	{
 		sa(a);
 		return ;
 	}
-	max = a->arr[0];
-	i = 1;
-	while (i < a->size)
-	{
-		if (a->arr[i] > max)
-			max = a->arr[i];
-		i++;
-	}
-	if (max == a->arr[0])
+	max_ind = find_ind_max(a);
+	if (max_ind == 0)
 		ra(a);
-	else if (max == a->arr[1])
+	else if (max_ind == 1)
 		rra(a);
 	if (a->arr[0] > a->arr[1])
 		sa(a);
