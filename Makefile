@@ -15,20 +15,30 @@ MY_SRC = main.c \
 		 algorithm_utils.c \
 		 chunk.c
 
+MY_OBJ = $(MY_SRC:.c=.o)
 LIBFT_DIR=libft
-LIBFT= libft.a
+LIBFT= $(LIBFT_DIR)/libft.a
+RM = rm -f
 
-$(NAME): $(LIBFT) $(MY_SRC) $(HEADER)
-	$(CC) $(CFLAGS) $(MY_SRC) -g -I. -I$(LIBFT_DIR) -L$(LIBFT_DIR) -lft -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(MY_OBJ)
+	$(CC) $(CFLAGS) $(MY_OBJ) -L$(LIBFT_DIR) -lft -o $(NAME)
+
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -c -I. -I$(LIBFT_DIR) $< -o $@
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 
-all: $(NAME)
-
 clean:
 	make -C $(LIBFT_DIR) clean
+	$(RM) $(MY_OBJ)
 
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
