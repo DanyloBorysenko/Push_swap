@@ -56,6 +56,45 @@ pa
 In case of error, the program display "Error" followed by an ’\n’ on the standard error.
 Errors include, for example: empty input, some arguments not being integers, some arguments exceeding the integer limits, and/or the presence of duplicates.
 
+## BONUS
+
+The bonus part includes a program called **checker**.
+It verifies whether a given sequence of push_swap instructions correctly sorts the stack.
+
+### Description
+
+The **checker** program takes the same arguments as `push_swap` and reads instructions from the standard input.
+After executing all instructions:
+
+- If stack **a** is sorted in ascending order **and** stack **b** is empty, it prints **"OK"**
+- Otherwise, it prints **"KO"**
+
+If an error occurs, it prints **"Error"** followed by a newline to the standard error.
+
+Errors include, for example:
+- empty input
+- non-integer arguments
+- integers exceeding limits
+- duplicate values
+- invalid or incorrectly formatted instructions
+
+### How to run
+
+First, compile the bonus part: ```make bonus```
+Then run *checker* with a list of integers and provide instructions via standard input:
+```
+$> ./checker 2 1 3
+sa
+<Ctrl+D>
+OK
+```
+
+Or test it together with `push_swap`:
+```
+$> ./push_swap 2 1 3 | ./checker 2 1 3
+OK
+```
+
 ## RESOURCES
 
 1. This guide helped to understand possible edge cases, sorting algorithms and their complexity: <https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/algorithms>
