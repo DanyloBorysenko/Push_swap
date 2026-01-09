@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:52:49 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/05 19:39:45 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:44:00 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static void	rotate_a_to_top(t_stack *stack, int el_ind)
 	int	rot_count;
 
 	midl_ind = stack->size / 2;
+	rot_count = moves_ned(stack, el_ind);
 	if (el_ind < midl_ind)
 	{
-		rot_count = el_ind;
 		while (rot_count > 0)
 		{
 			ra(stack);
@@ -29,7 +29,6 @@ static void	rotate_a_to_top(t_stack *stack, int el_ind)
 	}
 	else
 	{
-		rot_count = stack->size - el_ind;
 		while (rot_count > 0)
 		{
 			rra(stack);

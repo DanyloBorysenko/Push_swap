@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 11:46:42 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/03 20:00:04 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/09 11:16:14 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,10 @@ void	push_swap(int count, int *nums)
 	}
 	a->size = count;
 	b = create_stack(count);
-	run_algorithm(a, b);
-	free_stack(a);
-	free_stack(b);
+	if (a && b)
+	{
+		run_algorithm(a, b);
+		free_stack(a);
+		free_stack(b);
+	}
 }

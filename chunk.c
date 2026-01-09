@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/03 16:49:15 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/05 20:31:04 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:44:16 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	rotate_b_to_top(t_stack *stack, int el_ind)
 	}
 }
 
-void	sort_a(int chunk_size, t_stack *a, t_stack *b)
+static void	sort_a(int chunk_size, t_stack *a, t_stack *b)
 {
 	int	nums_pushed;
 	int	chunk_max;

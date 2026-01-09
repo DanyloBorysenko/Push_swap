@@ -6,7 +6,7 @@
 /*   By: danborys <borysenkodanyl@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 14:32:19 by danborys          #+#    #+#             */
-/*   Updated: 2026/01/03 14:48:43 by danborys         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:19:51 by danborys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	*create_stack(int nums_count)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-	stack->arr = calloc(sizeof(int), nums_count);
+	stack->arr = ft_calloc(sizeof(int), nums_count);
 	if (!stack->arr)
 	{
 		free(stack);
@@ -48,10 +48,10 @@ void	shift_down(t_stack *stack)
 {
 	int	i;
 
-	if (stack->size > 0)
+	if (stack->size > 1)
 	{
 		i = stack->size - 1;
-		while (i >= 1)
+		while (i > 0)
 		{
 			stack->arr[i] = stack->arr[i - 1];
 			i--;
